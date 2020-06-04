@@ -1,0 +1,23 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: curl -fsSL https://deno.land/x/install/install.sh | sh
+    - run: deno ifno
+    - run: deno cache --config ./tsconfig.app.json alosaur.ts # Loads cource code and compiles it https://deno.land/manual/runtime/compiler_apis
+    # - run: deno bundle --config .\tsconfig.app.json .\alosaur.ts # Fails beacuse of "ky" imported as js file in /api/* files
+    - run: deno test
