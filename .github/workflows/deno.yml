@@ -19,4 +19,4 @@ jobs:
     - run: deno info
     - run: deno cache --config ./tsconfig.app.json alosaur.ts # Loads cource code and compiles it https://deno.land/manual/runtime/compiler_apis
     # - run: deno bundle --config .\tsconfig.app.json .\alosaur.ts # Fails beacuse of "ky" imported as js file in /api/* files
-    - run: deno test
+    # - run: deno test # fails because of no test defined
