@@ -41,7 +41,7 @@ export class HomeController {
     } else {
       filtered = this.properties;
     }
-
+    console.log(`Data loaded correctly - ${this.properties}`)
     return View("home/home", {
       title: "Kentico Estates",
       properties: filtered,
