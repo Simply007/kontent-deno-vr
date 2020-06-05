@@ -13,7 +13,7 @@ const argPort = flags.parse(args).port;
 const port = argPort ? Number(argPort) : DEFAULT_PORT;
 
 if (isNaN(port)) {
-  console.log("port is not a number!")
+  console.log(`port is not a number - it is: ${port}`)
   exit(1);
 }
 
