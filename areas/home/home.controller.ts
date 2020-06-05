@@ -16,7 +16,11 @@ export class HomeController {
     if (this.properties.length === 0) {
       // data isn't cached- load from API
       console.log("Data fetching")
-      const resp = await getContentItems("system.type=property");
+      const resp = await getContentItems("system.type=property")
+        .then(result => {
+          console.log(result);
+          return result;
+        });
       console.log(`Data fetched: ${resp}`);
       this.properties = resp.items.map((i: any) => {
         return {
