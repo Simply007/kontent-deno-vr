@@ -15,7 +15,9 @@ export class HomeController {
     console.log("Home controller - index!!!")
     if (this.properties.length === 0) {
       // data isn't cached- load from API
+      console.log("Data fetching")
       const resp = await getContentItems("system.type=property");
+      console.log(`Data fetched: ${resp}`);
       this.properties = resp.items.map((i: any) => {
         return {
           title: i.elements.title.value,
