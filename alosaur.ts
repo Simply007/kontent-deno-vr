@@ -14,16 +14,16 @@ const appSettings = {
 
 console.log(config());
 
-const app = new App(appSettings);
-app.useStatic({
-  root: `${Deno.cwd()}/assets`,
-  baseRoute: "/assets/",
-});
-app.useViewRender({
-  type: "dejs",
-  basePath: `${Deno.cwd()}/views/`,
-  getBody: (path: string, model: Object, config: ViewRenderConfig) =>
-    renderFile(normalize(`${config.basePath}${path}.ejs`), model),
-});
+// const app = new App(appSettings);
+// app.useStatic({
+//   root: `${Deno.cwd()}/assets`,
+//   baseRoute: "/assets/",
+// });
+// app.useViewRender({
+//   type: "dejs",
+//   basePath: `${Deno.cwd()}/views/`,
+//   getBody: (path: string, model: Object, config: ViewRenderConfig) =>
+//     renderFile(normalize(`${config.basePath}${path}.ejs`), model),
+// });
 
-app.listen(`:${Number(config().PORT) || 8080}`);
+// app.listen(`:${Number(config().PORT) || 8080}`);
