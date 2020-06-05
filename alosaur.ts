@@ -26,4 +26,4 @@ app.useViewRender({
     renderFile(normalize(`${config.basePath}${path}.ejs`), model),
 });
 
-app.listen(`:${Number(process.env.PORT) || 8080}`);
+app.listen(`:${Number(config().PORT) || 8080}`);
