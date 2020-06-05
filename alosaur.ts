@@ -30,8 +30,14 @@ app.useStatic({
 app.useViewRender({
   type: "dejs",
   basePath: `${Deno.cwd()}/views/`,
-  getBody: (path: string, model: Object, config: ViewRenderConfig) =>
-    renderFile(normalize(`${config.basePath}${path}.ejs`), model),
+  getBody: (path: string, model: Object, config: ViewRenderConfig) => {
+    console.log(path)
+    console.log(model);
+    console.log(config);
+    console.log(`${config.basePath}XX${path}XX.ejs`)
+    console.log(normalize(`${config.basePath}${path}.ejs`));
+    return renderFile(normalize(`${config.basePath}${path}.ejs`), model);
+  }
 });
 
 console.log(`Start listening on port: ${port}`);
