@@ -34,4 +34,5 @@ app.useViewRender({
     renderFile(normalize(`${config.basePath}${path}.ejs`), model),
 });
 
+console.log(`Start listening on port: ${port}`);
 app.listen(`:${port}`);
