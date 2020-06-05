@@ -3,6 +3,7 @@ import { normalize } from "https://deno.land/x/alosaur/src/deps.ts";
 import { HomeArea } from "./areas/home/home.area.ts";
 import { TourArea } from "./areas/tour/tour.area.ts";
 import { ListingArea } from "./areas/listing/listing.area.ts";
+import { TestArea } from "./areas/test/test.area.ts";
 import { App, ViewRenderConfig } from "https://deno.land/x/alosaur/mod.ts";
 import { config } from "https://deno.land/x/dotenv/mod.ts";
 import * as flags from "https://deno.land/std/flags/mod.ts";
@@ -18,7 +19,7 @@ if (isNaN(port)) {
 }
 
 const appSettings = {
-  areas: [HomeArea, ListingArea, TourArea],
+  areas: [HomeArea, ListingArea, TourArea, TestArea],
   logging: true,
 };
 
