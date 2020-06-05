@@ -12,6 +12,7 @@ export class HomeController {
 
   @Get()
   async text(@QueryParam("q") q: string) {
+    console.log("Home controller - index!!!")
     if (this.properties.length === 0) {
       // data isn't cached- load from API
       const resp = await getContentItems("system.type=property");

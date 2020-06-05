@@ -42,4 +42,5 @@ app.useViewRender({
 });
 
 console.log(`Start listening on port: ${port}`);
+
 app.listen(`:${port}`);
